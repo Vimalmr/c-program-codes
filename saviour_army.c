@@ -21,7 +21,7 @@ int main(){
                 count = operation(row-1, col-1);
             }
             else{
-                printf("Give valid input in numbers between 1 to 8\n");
+                printf("Give valid input in numbers between 1 to 8 \n");
                 break;
             }
         printf("%d terrorists has been killed totally. \n",count);
@@ -47,4 +47,4 @@ int operation(int row, int col){
 	}
     return killed;
 
-}
+} 
