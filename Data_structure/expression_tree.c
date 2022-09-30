@@ -51,9 +51,9 @@ int main(){
             new=(struct node *)malloc(sizeof(struct node));
             new->data=x[i];
             temp=pop();
-            new->l=temp;
-            temp=pop();
             new->r=temp;
+            temp=pop();
+            new->l=temp;
             push(new);
         }
     }
