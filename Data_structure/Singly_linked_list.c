@@ -81,7 +81,7 @@ int main(){
     }
 }
 
-//Functions to perform the Specific actions
+//Functions to perform the Specific actions as per the above inputs
 
 void insertAtBeginning(int value){
     struct node *newnode;
