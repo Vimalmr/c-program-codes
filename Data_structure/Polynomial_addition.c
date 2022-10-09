@@ -8,7 +8,7 @@ struct node
 	struct node *nxt;
 }*poly1,*poly2,*res,*nw,*t1,*t2,*t3;
 
-int main(void)
+int main()
 {
 	int c,q;
 	int p1;
@@ -233,4 +233,3 @@ int main(void)
 	scanf("%d",&c);
 	}
 }
-
