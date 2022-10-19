@@ -41,11 +41,12 @@ int main(){
         printf("Press (1) to continue and (0) to exit\nEnter here => ");
         scanf("%d",&c);
     }
+
     printf("\nExited the insertion mode\n");
     temp=root;
     printf("\nWhat number do you to search\nEnter the Value => ");
     scanf("%d",&x);
-    while(temp != NULL && temp->data != x ){
+    while((temp->l != NULL || temp->r != NULL) && temp->data != x ){
         if(x<temp->data){
             temp=temp->l;
         }
@@ -53,10 +54,16 @@ int main(){
             temp=temp->r;
         }
     }
-    if(temp!=NULL){
+
+    if(temp->l != NULL || temp->r != NULL){
         printf("%d if found in the tree\n",temp->data);
     }
     else{
-    printf("%d is not found in the tree\n",temp->data);
+        if(temp->data==x){
+            printf("%d is not found in the tree\n",temp->data);
+        }
+        else{
+            printf("%d is not found in the tree\n",temp->data);
+        }
     }
 }
