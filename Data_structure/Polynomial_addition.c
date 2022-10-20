@@ -39,23 +39,23 @@ int main()
 			        	{
 			        		poly1=nw;
 			        		t1=nw;
-						}
-						else
-						{
-							t1->nxt=nw;
-							t1=nw;
-						}
-						printf("\n Press 1 to create the node of the poly1");
-						printf("\n Press 0 to stop creating ploy1==>");
-						scanf("%d",&p1);
 					}
+					else
+					{
+						t1->nxt=nw;
+						t1=nw;
+					}
+					printf("\n Press 1 to create the node of the poly1");
+					printf("\n Press 0 to stop creating ploy1==>");
+					scanf("%d",&p1);
+					}
+				
 					t1=poly1;
 					while(t1!=NULL)
 					{
 						printf("| %d | %d |--> ",t1->co,t1->exp);
 						t1=t1->nxt;
 					}
-				   getch();
 				   break;
 			case 2:
 					p2=1;
