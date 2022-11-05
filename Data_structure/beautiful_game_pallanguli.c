@@ -1,14 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node{
+//Start.
+//This is code is about a Traditional ancient game called pallanguli, played in Tamilnadu.
+//So, I wrote code for the algorithm of the game and build it in 'C' programming language.
+
+struct node{ //Defining the structure
     int data;
     struct node *next;
 }*a=NULL,*b=NULL,*new,*ta,*tb;
 
 int sum1=0,sum2=0,sum=0,play=0;
 
-void makeup(){
+void makeup(){ //Creating the pallanguli setup using circular linkedlist.
     for(int i=0;i<5;i++){
         new=(struct node*)malloc(sizeof(struct node));
         new->data=5;
@@ -37,7 +41,7 @@ void makeup(){
     tb->next=a;
 }
 
-void printReverse(struct node* head)
+void printReverse(struct node* head) //Here the linkedlist B is printed in reverse for user to understand the program well.
 { 
     if (head == a){
        return;
@@ -46,7 +50,7 @@ void printReverse(struct node* head)
     printf("%d ", head->data);
 }
 
-void display(){
+void display(){ //Printing the No. of beads in the pallanguli.
     ta=a;
     printf(" -<A side>-\n");
     printf("  1 2 3 4 5\n--------------\n| ");
@@ -59,7 +63,7 @@ void display(){
     printf("|\n--------------\n  5 4 3 2 1\n -<B side>-\n");
 }
 
-int checka(){
+int checka(){ //Checking whether the hole side is 0 or not.
     ta=a;
     int k=0; 
     for(int i=0;i<5;i++){
@@ -102,8 +106,8 @@ int checkb(){
         return 1;
     }
 }
-
-void gamea(int opt){
+//Algorithm/Program for the core of the game.
+void gamea(int opt){ //For player A.
     ta=a;
     int op=1;
     for(int i=1;i<opt;i++){
@@ -131,7 +135,7 @@ void gamea(int opt){
     play=1;
 }
 
-void gameb(int opt){
+void gameb(int opt){ //For player B.
     tb=b;
     int op=1;
     for(int i=1;i<opt;i++){
@@ -159,22 +163,22 @@ void gameb(int opt){
     play=0;
 }
 
-int main(){
+int main(){ //Main program
     int c=1,opt;
     printf("\n*** Welcome to PALLANGULI ***\n");
     makeup();
     printf("--- Pallanguli Game starts ---\n\n");
     display();
     printf("\n");
-    while(c){
-        if(play==0){
+    while(c){ //Loop
+        if(play==0){ //Player A
             if(checka()){
                 again1:
                 printf("Mr.A, Where do you want to start : ");
                 scanf("%d",&opt);
-                if(opt<=5 && opt>0){
-                    gamea(opt);
-                    display();
+                if(opt<=5 && opt>0){ //Checking if the given input is within the range.
+                    gamea(opt); //Calling function gamea.
+                    display(); //displaying
                     printf("A = %d\nB = %d\n\n",sum1,sum2);
                 }
                 else{
@@ -182,19 +186,19 @@ int main(){
                     goto again1;
                 }
             }
-            else{
+            else{ //for Termination.
                 c=0;
             }
         }
 
-        if(play==1){
+        if(play==1){ //Player B
             if(checkb()){
                 again2:
                 printf("Mr.B, Where do you want to start : ");
                 scanf("%d",&opt);
-                if(opt<=5 && opt>0){
-                    gameb(opt);
-                    display();
+                if(opt<=5 && opt>0){ //Checking whether the given input is within the range or not.
+                    gameb(opt); //Calling function gameb()
+                    display(); //Displaying.
                     printf("A = %d\nB = %d\n\n",sum1,sum2);
                 }
                 else{
@@ -202,11 +206,12 @@ int main(){
                     goto again2;
                 }
             }
-            else{
+            else{ //for termination
                 c=0;
             }
         }
     }
+    //Announcing the result.
     if(sum1>sum2){
         printf("%d => A is the winner\n",sum1);
     }
@@ -217,3 +222,4 @@ int main(){
         printf("%d => A and %d => B, So Match is Draw\n",sum1,sum2);
     }
 }
+//EnD.
