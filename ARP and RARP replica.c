@@ -22,7 +22,7 @@ int main() {
                 
                 for (i = 0; i < 10; i++) { // Corrected loop bound
                     if (strcmp(ipaddr, ip[i]) == 0) {
-                        printf("Ethernet address is %s\n", et[i]);
+                        printf("MAC address is %s\n", et[i]);
                         x = 1;
                         break; // Exit loop once a match is found
                     }
@@ -33,7 +33,7 @@ int main() {
                 x = 0;
                 break;
             case 2:
-                printf("Enter Ethernet address: ");
+                printf("Enter MAC address: ");
                 scanf("%s", etaddr);
                 
                 for (i = 0; i < 10; i++) { // Corrected loop bound
@@ -44,7 +44,7 @@ int main() {
                     }
                 }
                 if (y == 0) {
-                    printf("Invalid Ethernet address\n");
+                    printf("Invalid MAC address\n");
                 }
                 y = 0;
                 break;
